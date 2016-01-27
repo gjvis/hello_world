@@ -1,0 +1,11 @@
+nginx:
+  restart: always
+  build: ./nginx/
+  ports:
+    - "80:80"
+  links:
+    - web
+
+web:
+  restart: always
+  image: luisbebop/docker-sinatra-hello-world
